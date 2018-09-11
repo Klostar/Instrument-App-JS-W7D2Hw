@@ -9,9 +9,14 @@ SelectView.prototype.bindEvents = function () {
     const allFamilies = event.detail;
     this.populate(allFamilies)
   });
-
+this.element.addEventListener('change',(event)=>{
+  const selectedIndex = event.target.value;
+  PubSub.publish('SelectView:change', selectedIndex);
+});
 
 };
+
+
 SelectView.prototype.populate = function(instrumentData){
   instrumentData.forEach((instrument,index) =>{
     const option = document.createElement('option');

@@ -31,8 +31,21 @@ const InstrumentFamilies = function() {
 };
 
 InstrumentFamilies.prototype.bindEvents = function () {
-  PubSub.publish('InstrumentFamilies:InstrumentReady', this.instrumentFamilies)
-  console.log(this.instrumentFamilies);
+  PubSub.publish('InstrumentFamilies:InstrumentReady', this.instrumentFamilies);
+
+PubSub.subscribe('SelectView:change', (event) =>{
+  const selectedIndex = event.detail;
+  // console.log(event.detail); logs out index number
+  this.publishInstumentFamiliesDetail(selectedIndex);
+
+});
+
+};
+
+  InstrumentFamilies.prototype.publishInstumentFamiliesDetail = function(instrumentFamilyIndex){
+    const selectedInstrumentFamily = this.instrumentFamilies[instrumentFamilyIndex];
+    console.log(selectedInstrumentFamily);
+    PubSub.publish('Instrument:selected-instrument-ready', selectedInstrumentFamily)
 
 };
 
