@@ -7,9 +7,19 @@ const SelectView = function(element){
 SelectView.prototype.bindEvents = function () {
   PubSub.subscribe('InstrumentFamilies:InstrumentReady', (event) => {
     const allFamilies = event.detail;
-    console.log(allFamilies);
     this.populate(allFamilies)
   });
+
+
+};
+SelectView.prototype.populate = function(instrumentData){
+  instrumentData.forEach((instrument,index) =>{
+    const option = document.createElement('option');
+    option.textContent = instrument.name
+    option.value = index;
+    this.element.appendChild(option);
+
+  })
 
 };
 
