@@ -10,13 +10,13 @@ InstrumentInfoView.prototype.bindEvents = function (){
     const instrument = event.detail;
     this.render(instrument);
   });
+};
 
 InstrumentInfoView.prototype.render = function (instrument) {
   const infoParagraph = document.createElement('p');
-  infoParagraph.textContent =`The ${instrumentFamilies.name} is ${instumentFamilies.description}`
+  infoParagraph.textContent =`The ${instrument.name} is ${instrument.description}`
   this.container.innerHTML = '';
   this.container.appendChild(infoParagraph);
 };
 
-
-};
+module.exports = InstrumentInfoView;

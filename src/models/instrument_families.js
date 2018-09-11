@@ -44,7 +44,7 @@ PubSub.subscribe('SelectView:change', (event) =>{
 
   InstrumentFamilies.prototype.publishInstumentFamiliesDetail = function(instrumentFamilyIndex){
     const selectedInstrumentFamily = this.instrumentFamilies[instrumentFamilyIndex];
-    console.log(selectedInstrumentFamily);
+    // console.log(selectedInstrumentFamily); //logs out selected instrument family
     PubSub.publish('Instrument:selected-instrument-ready', selectedInstrumentFamily)
 
 };
