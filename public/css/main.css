@@ -1,0 +1,20 @@
+.wrapper{
+  display: grid;
+  grid-template-columns: 200px 200px 200px
+}
+
+h1{
+  font-family: monospace;
+  text-align: center;
+}
+
+#instrument-info{
+  font-family:sans-serif;
+  font-size: 12px;
+}
+
+label{
+  font-style: oblique;
+  font-family: monospace;
+
+}

@@ -15,8 +15,8 @@ InstrumentInfoView.prototype.bindEvents = function (){
 InstrumentInfoView.prototype.render = function (instrument) {
   const infoParagraph = document.createElement('p');
   infoParagraph.setAttribute('style','white-space: pre;')
-  infoParagraph.textContent =`Instrument Family: ${instrument.name} \r\ndescription: ${instrument.description}
-  \r\nInstruments Contained within this family are ${instrument.instruments}`
+  infoParagraph.textContent =`Instrument Family: ${instrument.name} \r\nDescription: ${instrument.description}
+  \r\nInstruments Contained within this Family are: ${instrument.instruments} `
   this.container.innerHTML = '';
   this.container.appendChild(infoParagraph);
 };
